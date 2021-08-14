@@ -17,4 +17,6 @@ class MainViewModel: ViewModel() {
     fun onDisplayEditTextContentClick() {
         _displayedEditTextContent.value = editTextContent.value
     }
+
+
 }
