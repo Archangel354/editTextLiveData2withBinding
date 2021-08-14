@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+
         Timber.i("actionbar is null")
         val actionBar: ActionBar? = this.supportActionBar
         if (actionBar != null) {
