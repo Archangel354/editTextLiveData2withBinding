@@ -7,7 +7,9 @@ import androidx.databinding.DataBindingUtil
 import com.example.android.edittextlivedata2withbinding.databinding.ActivityMainBinding
 import timber.log.Timber
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,9 +23,9 @@ class MainActivity : AppCompatActivity() {
         Timber.plant(Timber.DebugTree())
         topLevelDestinations.add(R.id.fragmentA)
         topLevelDestinations.add(R.id.fragmentB)
-
-
-
+        var appBarConfiguration = AppBarConfiguration
+            .Builder(topLevelDestinations).build()
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
         Timber.i("actionbar is null")
         val actionBar: ActionBar? = this.supportActionBar
@@ -34,5 +36,9 @@ class MainActivity : AppCompatActivity() {
         else{
             Timber.i("actionbar is null")
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return navController.navigateUp()
     }
 }
