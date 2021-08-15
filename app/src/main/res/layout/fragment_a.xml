@@ -43,7 +43,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:hint="Enter a fruit name"
+            android:hint="Enter any phrase"
             android:minHeight="48dp"
             android:text="@={viewmodel.editTextContent}"
             app:layout_constraintBottom_toBottomOf="parent"

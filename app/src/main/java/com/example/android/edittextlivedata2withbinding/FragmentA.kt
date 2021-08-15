@@ -6,13 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import com.example.android.edittextlivedata2withbinding.databinding.ActivityMainBinding
 import com.example.android.edittextlivedata2withbinding.databinding.FragmentABinding
 import timber.log.Timber
 
@@ -40,8 +36,6 @@ class FragmentA : Fragment() {
 
         binding.btnFragmentA.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragmentA_to_fragmentB))
         // Inflate the layout for this fragment
-        //return binding.root
-
         return binding.root
     }
 
