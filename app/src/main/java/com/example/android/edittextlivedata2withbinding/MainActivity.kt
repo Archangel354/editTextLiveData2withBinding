@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController)
         Timber.plant(Timber.DebugTree())
         topLevelDestinations.add(R.id.fragmentA)
-        topLevelDestinations.add(R.id.fragmentB)
+        //topLevelDestinations.add(R.id.fragmentB)
         var appBarConfiguration = AppBarConfiguration
             .Builder(topLevelDestinations).build()
         setupActionBarWithNavController(navController, appBarConfiguration)

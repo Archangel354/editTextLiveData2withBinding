@@ -32,7 +32,7 @@ class FragmentA : Fragment() {
         // Specify the fragment view as the lifecycle owner of the binding.
         // This is used so that the binding can observe LiveData updates
         binding.lifecycleOwner = viewLifecycleOwner
-        //val binding: FragmentABinding = DataBindingUtil.inflate(inflater, R.layout.fragment_a, container, false)
+        ///val binding: FragmentABinding = DataBindingUtil.inflate(inflater, R.layout.fragment_a, container, false)
 
         binding.btnFragmentA.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragmentA_to_fragmentB))
         // Inflate the layout for this fragment
