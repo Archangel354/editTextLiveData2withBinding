@@ -25,7 +25,8 @@ class FragmentA : Fragment() {
 
         Log.i("FragmentA", "Called ViewModelProvider.get")
         //viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel= ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // Set the viewmodel for databinding - this allows the bound layout access
         // to all the data in the ViewModel
         binding.viewmodel = viewModel
