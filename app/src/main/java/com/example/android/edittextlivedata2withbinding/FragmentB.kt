@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -17,6 +18,7 @@ class FragmentB : Fragment() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentBBinding
+    private lateinit var listView: ListView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,8 +26,7 @@ class FragmentB : Fragment() {
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_b, container, false)
         Log.i("FragmentB", "Called ViewModelProvider.get")
-        //viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
-        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
         viewModel= ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         // Set the viewmodel for databinding - this allows the bound layout access
         // to all the data in the ViewModel
@@ -34,7 +35,6 @@ class FragmentB : Fragment() {
         // This is used so that the binding can observe LiveData updates
         binding.lifecycleOwner = viewLifecycleOwner
         //val binding: FragmentBBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_b, container, false)
-
         //binding.btnFragmentA.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragmentA_to_fragmentB))
         // Inflate the layout for this fragment
         return binding.root

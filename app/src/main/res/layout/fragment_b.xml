@@ -10,16 +10,23 @@
             type="com.example.android.edittextlivedata2withbinding.MainViewModel"/>
     </data>
 
-    <LinearLayout
-        android:id="@+id/linearFragmentB"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:context=".FragmentB">
 
-        <ListView
-            android:id="@+id/listFragmentB"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/txtFragmentB"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@{viewmodel.displayedEditTextContent}"
+            android:hint="Frag A text goes here"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

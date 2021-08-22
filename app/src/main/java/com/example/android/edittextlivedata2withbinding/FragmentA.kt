@@ -10,18 +10,23 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.example.android.edittextlivedata2withbinding.databinding.FragmentABinding
+import com.example.android.edittextlivedata2withbinding.databinding.FragmentBBinding
 import timber.log.Timber
 
 class FragmentA : Fragment() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentABinding
+    private lateinit var Bbinding: FragmentBBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_a,container,false)
+        Bbinding = DataBindingUtil.inflate(inflater,R.layout.fragment_b, container, false)
+
+
 
         Log.i("FragmentA", "Called ViewModelProvider.get")
         //viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
@@ -30,6 +35,7 @@ class FragmentA : Fragment() {
         // Set the viewmodel for databinding - this allows the bound layout access
         // to all the data in the ViewModel
         binding.viewmodel = viewModel
+        Bbinding.viewmodel = viewModel
         // Specify the fragment view as the lifecycle owner of the binding.
         // This is used so that the binding can observe LiveData updates
         binding.lifecycleOwner = viewLifecycleOwner
